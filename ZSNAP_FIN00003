@@ -1,0 +1,21 @@
+@EndUserText.label: 'SNAPFIN00003: FiscalYear Variant Text'
+////////////////////////////////////////////////////////////////////////////////////////////////
+// This view is proprietary property of Madiba, Inc., managed under the signed EULA and       //
+// associated support agreement and is subject to a system audit review.                      //
+// This view or its contents may not be copied or altered and its functionality may not be    //
+// duplicated without the prior written consent of Madiba, Inc.                               //
+////////////////////////////////////////////////////////////////////////////////////////////////
+define view entity ZSNAP_FIN00004
+as select from t009t 
+association [0..1] to I_Language as _Language on $projection.Language = _Language.Language
+{ 
+@Search.defaultSearchElement: true 
+@Search.fuzzinessThreshold: 0.8
+@Search.ranking: #HIGH
+@Semantics.language: true
+key t009t.spras as Language,
+key cast( t009t.periv as fis_periv preserving type ) as FiscalYearVariant,
+@Semantics.text: true
+t009t.ltext as FiscalYearVariantDescription,
+_Language
+}  
