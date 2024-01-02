@@ -45,15 +45,12 @@ a
 
 ## Naming Standards
 While creating CDS views, must be differentiated between customer and SNAP. Identification can be done using following sequence. 
-## 
+##
 Is CDS view copied from SNAP CDS view database? If yes, then follow SNAP naming standard. 
 Is CDS view logic introduced by Madiba team using SNAP knowledge then customized specific to client functionality? If yes, then follow SNAP name space.
 Is CDS view copied from SAP standard view? If yes, then follow Customer naming standard.
 Is CDS view logic built for customer functionality from starting? If yes, then follow Customer naming standard.
-## Packages
-ZSNAP – Use this package for all SNAP naming standard objects.
-ZBW – Use this for all ADSOs
-ZATR – Use this for all ATR packages
+
 ## Customer CDS Views Naming Conversion
 •	Naming Standards:
   ZAAA_CCCCCCCCCCC - (SQL Name: ZAAACCCCCCCCCC)
