@@ -14,7 +14,7 @@ association [0..1] to I_Language as _Language on $projection.Language = _Languag
 @Search.ranking: #HIGH
 @Semantics.language: true
 key t009t.spras as Language,
-key cast( t009t.periv as fis_periv preserving type ) as FiscalYearVariant,
+key t009t.periv as FiscalYearVariant,
 @Semantics.text: true
 t009t.ltext as FiscalYearVariantDescription,
 _Language
