@@ -1,0 +1,22 @@
+@EndUserText.label: 'SNAPFIN00005: Fiscal Year Period'
+////////////////////////////////////////////////////////////////////////////////////////////////
+// This view is proprietary property of Madiba, Inc., managed under the signed EULA and       //
+// associated support agreement and is subject to a system audit review.                      //
+// This view or its contents may not be copied or altered and its functionality may not be    //
+// duplicated without the prior written consent of Madiba, Inc.                               //
+////////////////////////////////////////////////////////////////////////////////////////////////
+define view entity ZSNAP_FIN00005
+  as select from finsc_period
+{
+  key fiscal_year_variant            as fiscalyearvariant,
+  key fiscal_year                    as fiscalyear,
+  key fiscal_period                  as fiscalperiod,
+      fiscal_period_start_date       as fiscalperiodstartdate,
+      fiscal_period_end_date         as fiscalperiodenddate,
+      is_special_period              as isspecialperiod,
+      fiscal_year_start_date         as fiscalyearstartdate,
+      fiscal_year_end_date           as fiscalyearenddate,
+      next_fiscal_period             as nextfiscalperiod,
+      next_fiscal_period_fiscal_year as nextfiscalperiodfiscalyear,
+      fiscal_year_period             as fiscalyearperiod
+}
