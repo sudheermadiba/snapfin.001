@@ -7,7 +7,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////
 define view entity ZSNAP_FIN00004
 as select from t009
-association[0..*] to ZSNAP_FIN00004  as _Text on  $projection.FiscalYearVariant = _Text.FiscalYearVariant
+association[0..*] to ZSNAP_FIN00003  as _Text on  $projection.FiscalYearVariant = _Text.FiscalYearVariant
 { 
 @ObjectModel.text.association: '_Text'
 @Semantics.fiscal.yearVariant: true 
