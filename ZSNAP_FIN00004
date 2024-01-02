@@ -1,0 +1,20 @@
+@EndUserText.label: 'SNAPFIN00004: FiscalYear Variant'
+////////////////////////////////////////////////////////////////////////////////////////////////
+// This view is proprietary property of Madiba, Inc., managed under the signed EULA and       //
+// associated support agreement and is subject to a system audit review.                      //
+// This view or its contents may not be copied or altered and its functionality may not be    //
+// duplicated without the prior written consent of Madiba, Inc.                               //
+////////////////////////////////////////////////////////////////////////////////////////////////
+define view entity ZSNAP_FIN00004
+as select from t009
+association[0..*] to ZSNAP_FIN00004  as _Text on  $projection.FiscalYearVariant = _Text.FiscalYearVariant
+{ 
+@ObjectModel.text.association: '_Text'
+@Semantics.fiscal.yearVariant: true 
+key cast( periv as fis_periv preserving type ) as FiscalYearVariant,
+cast( xkale as fis_xkale preserving type ) as FiscalPeriodIsEqualMonth,
+xjabh as IsYearDependent,
+anzbp as PostingPeriodsNumberVal,
+anzsp as NumberOfSpecialPeriods,
+_Text
+}   
