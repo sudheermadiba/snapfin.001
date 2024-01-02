@@ -7,12 +7,12 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////
 define view entity ZSNAP_FIN00004
 as select from t009
-association[0..*] to ZSNAP_FIN00003  as _Text on  $projection.FiscalYearVariant = _Text.FiscalYearVariant
+association[0..*] to ZSNAP_FIN00003 as _Text on  $projection.FiscalYearVariant = _Text.FiscalYearVariant
 { 
 @ObjectModel.text.association: '_Text'
 @Semantics.fiscal.yearVariant: true 
-key cast( periv as fis_periv preserving type ) as FiscalYearVariant,
-cast( xkale as fis_xkale preserving type ) as FiscalPeriodIsEqualMonth,
+key periv as FiscalYearVariant,
+xkale as FiscalPeriodIsEqualMonth,
 xjabh as IsYearDependent,
 anzbp as PostingPeriodsNumberVal,
 anzsp as NumberOfSpecialPeriods,
