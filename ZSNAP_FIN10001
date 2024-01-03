@@ -1,0 +1,35 @@
+@EndUserText.label: 'SNAPFIN10001: Fiscal Calendar Date'
+////////////////////////////////////////////////////////////////////////////////////////////////
+// This view is proprietary property of Madiba, Inc., managed under the signed EULA and       //
+// associated support agreement and is subject to a system audit review.                      //
+// This view or its contents may not be copied or altered and its functionality may not be    //
+// duplicated without the prior written consent of Madiba, Inc.                               //
+////////////////////////////////////////////////////////////////////////////////////////////////
+define view entity ZSNAP_FIN10001
+as select from ZSNAP_FIN00001 
+association [0..1] to ZSNAP_FIN00004 as _FiscalYearVariant on $projection.FiscalYearVariant = _FiscalYearVariant.FiscalYearVariant
+{
+@ObjectModel.foreignKey.association: '_FiscalYearVariant'         
+key fiscal_year_variant       as FiscalYearVariant,    
+key calendar_date             as CalendarDate,  
+    fiscal_year               as FiscalYear,
+    fiscal_year_start_date    as FiscalYearStartDate,
+    fiscal_year_end_date      as FiscalYearEndDate,  
+    fiscal_period             as FiscalPeriod,
+    fiscal_period_start_date  as FiscalPeriodStartDate,
+    fiscal_period_end_date    as FiscalPeriodEndDate,
+    fiscal_quarter            as FiscalQuarter,
+    fiscal_quarter_start_date as FiscalQuarterStartDate,
+    fiscal_quarter_end_date   as FiscalQuarterEndDate, 
+    fiscal_week               as FiscalWeek,
+    fiscal_week_start_date    as FiscalWeekStartDate,
+    fiscal_week_end_date      as FiscalWeekEndDate,
+    fiscal_year_period        as FiscalYearPeriod,   
+    fiscal_year_quarter       as FiscalYearQuarter,
+    fiscal_year_week          as FiscalYearWeek,    
+    fiscal_year               as FiscalYearConsecutiveNumber,
+    fiscal_year_period_int    as FiscalPeriodConsecutiveNumber,
+    fiscal_year_quarter_int   as FiscalQuarterConsecutiveNumber,
+    fiscal_year_week_int      as FiscalWeekConsecutiveNumber, 
+    _FiscalYearVariant       
+} 
